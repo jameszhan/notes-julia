@@ -1,73 +1,60 @@
 
 # 中文 Julia 笔记
 
-> 版本：0.0.1<br>
-> 作者：詹子知<br>
-> 邮件：zhiqiangzhan@gmail.com <br />
+版本号 | 修订日期 | 修订概述 | 修订人 | Email 
+----- | ------ | ------- | ----- | -----
+v0.0.1 | 2019-01-26 | 初始化 | James Zhan | zhiqiangzhan@gmail.com
+
 
 `Github` 加载 `.ipynb` 的速度较慢，建议在 [Nbviewer](http://nbviewer.jupyter.org/github/jameszhan/notes-julia/tree/master/index.ipynb) 中查看该项目。
 
+
+## 环境准备
+
+### 安装 Julia
+
+**Mac OS X 环境**
+
+```bash
+brew cask info julia
+brew cask install julia
+
+julia -version
+```
+
+**其他环境**
+
+[官网][julia-downloads]下载对应环境的安装包安装即可。
+
+### 安装 Jupyter Notebook
+
+为了更好地使用 [Jupyter NoteBook][jupyter-notebook]，推荐安装 `jupyter`, 推荐使用 [Anaconda][anaconda]。
+
+```bash
+wget https://repo.continuum.io/archive/Anaconda3-2018.12-MacOSX-x86_64.sh
+bash ./Anaconda3-2018.12-MacOSX-x86_64.sh
+```
+
+### 安装 IJulia
+
+```bash
+julia -e 'using Pkg; Pkg.add("IJulia")'
+```
+
+### 启动笔记本
+
+```bash
+git clone https://github.com/jameszhan/notes-julia.git
+cd notes-julia
+
+jupyter notebook .
+```
 
 ## 简介
 
 部分内容来自网络。
 
-默认安装了 `Ruby 2.4.1`，以及相关的第三方包 `bundler`， `iruby`。
-
-为了更好地使用 [Jupyter NoteBook](http://nbviewer.jupyter.org/)，推荐安装 `jupyter`, 推荐使用 [Anaconda](https://www.anaconda.com/download/)。
-
-
-安装好 `Ruby` 和相应的包之后，可以在命令行下输入：
-
-```bash
-git clone https://github.com/jameszhan/notes-ruby.git
-cd notes-ruby
-bundle update
-```
-
-启动笔记本
-
-```bash
-iruby notebook .
-```
-
-或者
-
-```bash
-jupyter notebook .
-```
-
-## 参考
-- [Julia 官网][julia-official-website]
-- [Julia 文档][julia-docs]
-- [Julia 元编程][julia-metaprogramming]
-- [Julia Style Guide][julia-style-guide]
-- [Julia language: a concise tutorial][julia-gitbook]
-
-
-## 生成静态文件
-
-可以在 Notebook 中打开 `generate-static-files.ipynb` 来生成静态的 HTML 文件。
-
-使用命令行工具生成。
-
-```bash
-gem install thor
-
-chmod +x generate
-
-
-# 默认生成 markdown 文件到 static-files 目录
-./generate static
-
-# 生成 pdf 文件到 static-files 目录
-./generate static --to pdf  
-
-# 生成 html 文件到 generated 目录
-./generate static --to html --output=generated 
-```
-
-## 目录
+## 内容目录
 
 - [01. **Julia 快速概览**](01-julia-overview)
 	- [01.01.**Julia 简介**](01-julia-overview/01.01-julia-overview.ipynb)
@@ -97,8 +84,41 @@ chmod +x generate
 - [05. **Julia 在机器学习上的应用**](05-julia-on-ml)
 
 
+## 生成静态文件
+
+可以在 Notebook 中打开 `generate-static-files.ipynb` 来生成静态的 HTML 文件。
+
+使用命令行工具生成。
+
+```bash
+gem install thor
+
+chmod +x generate
+
+
+# 默认生成 markdown 文件到 static-files 目录
+./generate static
+
+# 生成 pdf 文件到 static-files 目录
+./generate static --to pdf  
+
+# 生成 html 文件到 generated 目录
+./generate static --to html --output=generated 
+```
+
+## 参考
+- [Julia 官网][julia-official-website]
+- [Julia 文档][julia-docs]
+- [Julia 元编程][julia-metaprogramming]
+- [Julia Style Guide][julia-style-guide]
+- [Julia language: a concise tutorial][julia-gitbook]
+
+
+[jupyter-notebook]: http://nbviewer.jupyter.org/ "Jupyter NoteBook"
+[anaconda]: https://www.anaconda.com/download/ "Anaconda"
 [julia-official-website]: https://julialang.org/ "Julia 官网"
 [julia-docs]: https://docs.julialang.org "Julia 文档"
+[julia-downloads]: https://julialang.org/downloads/ "Julia Downloads"
 [julia-style-guide]: https://docs.julialang.org/en/v1/manual/style-guide/index.html "Julia Style Guide"
 [julia-metaprogramming]: https://docs.julialang.org/en/v1/manual/metaprogramming/ "Julia 元编程"
 [julia-gitbook]: https://syl1.gitbook.io/julia-language-a-concise-tutorial/ "Julia language: a concise tutorial"
