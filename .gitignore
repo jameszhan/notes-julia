@@ -2,3 +2,13 @@
 *.jl.*.cov
 *.jl.mem
 deps/deps.jl
+
+
+/static-files/*
+.ipynb_checkpoints/
+
+*.ipr
+*.iws
+*.iml
+
+/tmp/
